@@ -37,13 +37,13 @@
             },
             {
               "name": "Authorization",
-              "value": "Bearer EAAmtmXA2muwBRRnRa0pLDt2zWqyaWmP6IWtQyCt6MxQFJ7T2nXCxQ58M6WErXqbjM36v9K69bFZC2wZBJUIx84qVtAJNxwjvl1za3r2shlq3XzeGv07YT5m1aggikFoCeZCb3w4D3YZAgxui6t9ZCqsubvYIE70pwnZCZBav5lZBPdOZCxvc0l6HrTXYljw5VwdCYfSljUiGGOOCtd9mBGYzrn6ZBeXDCnefAZCghDOEMJdTOCXo5oFQf5fXte0XhkaxE3LTEZAeUPZBgwKwWNfVZCybdB"
+              "value": "Bearer <Access Token>"
             }
           ]
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"917815975509\",\n  \"type\": \"text\",\n  \"text\": { \"body\": \"{{ $json.channel_post.text }}\" }\n}\n",
+        "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"<recipient-number-with-code>\",\n  \"type\": \"text\",\n  \"text\": { \"body\": \"{{ $json.channel_post.text }}\" }\n}\n",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
