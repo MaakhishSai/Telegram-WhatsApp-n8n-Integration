@@ -1,0 +1,86 @@
+{
+  "name": "Tg-Wa-Integration",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "channel_post"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        16
+      ],
+      "id": "50df55d6-1287-401b-9c9e-2f06a622b1af",
+      "name": "Telegram Trigger",
+      "webhookId": "e60d959e-01d7-45f5-9af6-aaa35c1ade95",
+      "credentials": {
+        "telegramApi": {
+          "id": "2lmF0gdhRKBCQbXN",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v25.0/1151275558062712/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer EAAmtmXA2muwBRRnRa0pLDt2zWqyaWmP6IWtQyCt6MxQFJ7T2nXCxQ58M6WErXqbjM36v9K69bFZC2wZBJUIx84qVtAJNxwjvl1za3r2shlq3XzeGv07YT5m1aggikFoCeZCb3w4D3YZAgxui6t9ZCqsubvYIE70pwnZCZBav5lZBPdOZCxvc0l6HrTXYljw5VwdCYfSljUiGGOOCtd9mBGYzrn6ZBeXDCnefAZCghDOEMJdTOCXo5oFQf5fXte0XhkaxE3LTEZAeUPZBgwKwWNfVZCybdB"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"917815975509\",\n  \"type\": \"text\",\n  \"text\": { \"body\": \"{{ $json.channel_post.text }}\" }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -32,
+        16
+      ],
+      "id": "e57912e6-08a8-441d-8a20-1f5cba034bb3",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "e53e515a-c14b-4c74-a25a-ba0dccf87072",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "936dda7b87b2be4a0dfb1ae864d1d798be50e9996015623a9967f0beb22d5bba"
+  },
+  "id": "xxUYBwnv6TdtOGCY",
+  "tags": []
+}
